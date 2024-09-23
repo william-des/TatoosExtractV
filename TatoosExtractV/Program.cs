@@ -51,6 +51,10 @@ namespace TatoosExtractV
         {
             GameFilesCache = GameFileCacheFactory.Create();
             GTA5Keys.LoadFromPath(GTAFolder.CurrentGTAFolder, Settings.Default.Key);
+            GameFilesCache.EnableDlc = true;
+            GameFilesCache.LoadVehicles = false;
+            GameFilesCache.LoadArchetypes = false;
+            GameFilesCache.LoadAudio = false;
             GameFilesCache.Init(Console.WriteLine, Console.WriteLine);
         }
 
