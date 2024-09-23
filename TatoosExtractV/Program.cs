@@ -62,7 +62,7 @@ namespace TatoosExtractV
         {
             string json = JsonConvert.SerializeObject(AllTattos.Values);
             File.WriteAllText("tatoos.json", json);
-            Console.WriteLine(AllTattos.Values.Count + "tatoos extracted");
+            Console.WriteLine(AllTattos.Values.Count + " tatoos extracted");
         }
 
         private static void ExtractAllTatoos()
@@ -131,7 +131,7 @@ namespace TatoosExtractV
 
         private static void ExtractTatooTexture(string tatooName, string txdName)
         {
-            var ytdEntry = GameFilesCache.GetYtdEntry(JenkHash.GenHash(txdName));
+            var ytdEntry = GameFilesCache.GetYtdEntry(JenkHash.GenHash(txdName.ToLower()));
             if (ytdEntry == null)
             {
                 Console.WriteLine("Ytd entry " + txdName + " not found");
